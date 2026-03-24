@@ -1,11 +1,11 @@
-"use client"; // แจ้ง Next.js ว่าไฟล์นี้ทำงานที่ฝั่ง Browser (Client Side)
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import type { User as SupabaseUser } from "@supabase/supabase-js";
-import { supabase } from "@/lib/supabase/client"; // เครื่องมือเชื่อมต่อฐานข้อมูล Supabase
-import { useRouter } from "next/navigation"; // เครื่องมือเปลี่ยนหน้า
+import { supabase } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 import {
   Loader2,
   Edit3,
@@ -13,8 +13,8 @@ import {
   User as UserIcon,
   Heart,
   MessageSquare,
-} from "lucide-react"; // ไอคอนต่างๆ
-import ProfileCommentModal from "@/app/components/ProfileCommentModal"; // Modal แสดงคอมเมนต์
+} from "lucide-react";
+import ProfileCommentModal from "@/app/components/ProfileCommentModal";
 
 // ====================================================================
 // ส่วนกำหนดรูปแบบข้อมูล (Interfaces)
@@ -24,11 +24,10 @@ import ProfileCommentModal from "@/app/components/ProfileCommentModal"; // Modal
 interface Profile {
   id: string;
   username: string | null;
-  avatar_url: string | null; // ที่เก็บไฟล์รูปโปรไฟล์
-  cover_url: string | null;  // ที่เก็บไฟล์รูปปก
+  avatar_url: string | null; 
+  cover_url: string | null;  
 }
 
-// ข้อมูลโพสต์แบบดิบ (ที่ดึงมาจาก Database)
 interface PostWithJoins {
   id: string;
   content: string;
@@ -48,9 +47,9 @@ interface Post {
   user_id: string;
   group_id: string;
   media_urls: string[] | null;
-  likesCount: number;      // จำนวนไลก์
-  commentsCount: number;   // จำนวนคอมเมนต์
-  likedByUser: boolean;    // ผู้ใช้กดไลก์แล้วหรือยัง
+  likesCount: number;      
+  commentsCount: number;   
+  likedByUser: boolean;  
 }
 
 // ====================================================================

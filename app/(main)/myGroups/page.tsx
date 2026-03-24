@@ -1,9 +1,9 @@
-'use client' // แจ้ง Next.js ว่าไฟล์นี้ทำงานที่ฝั่ง Browser (Client Side)
+'use client' 
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { supabase } from '@/lib/supabase/client' // เครื่องมือเชื่อมต่อฐานข้อมูล Supabase
-import { PlusCircle, UsersRound } from 'lucide-react' // ไอคอนต่างๆ
+import { supabase } from '@/lib/supabase/client' 
+import { PlusCircle, UsersRound } from 'lucide-react' 
 
 // ====================================================================
 // ส่วนกำหนดรูปแบบข้อมูล (Interface)
@@ -56,7 +56,7 @@ export default function MyGroupsPage() {
         .from('groups')
         .select('*')
         .eq('owner_id', user.id) 
-        .order('name', { ascending: true }) // เรียงตามชื่อ ก-ฮ
+        .order('name', { ascending: true }) 
 
       if (error) {
         console.error('Error fetching my groups:', error.message)
