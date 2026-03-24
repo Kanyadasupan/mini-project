@@ -79,9 +79,7 @@
 ---
 
 ## 👤 ผู้พัฒนา
-* **Nick** - Full-stack Developer
-* **GitHub:** [@KanyadaSupan](https://github.com/KanyadaSupan)
-* **Education:** Siam University (Digital Technology and Innovation)
+**Developed by [Kanyada](https://github.com/KanyadaSupan)**
+*Student at Southeast Asia University | Digital Technology and Innovation*
 
 ---
-Developed with ❤️ by Nick
